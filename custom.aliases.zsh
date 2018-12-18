@@ -77,3 +77,10 @@ alias gksudo='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY'
 alias you='youtube-dl -o "$HOME/Videos/%(title)s.%(ext)s"'
 
 alias zshrc-reload='. ~/.zshrc'
+
+__gitio_func() {
+    echo "Shortening URL..."
+    curl -i https://git.io -F "url=$1" && echo ""
+}
+
+alias gitio="__gitio_func $1"
