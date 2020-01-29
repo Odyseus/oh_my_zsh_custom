@@ -6,6 +6,8 @@ zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name ''
+# zstyle ':completion::complete:*' use-cache on
+zstyle ':completion:*' verbose yes
 
 # Make Bash completion function somewhat compatible with zsh.
 # Source: https://askql.wordpress.com/2011/01/11/zsh-writing-own-completion/
