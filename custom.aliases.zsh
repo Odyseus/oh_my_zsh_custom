@@ -3,12 +3,12 @@
 # Colored grep/fgrep/egrep
 # Need to check an existing file for a pattern that will be found to ensure
 # that the check works when on an OS that supports the color option
-# if grep --color=auto "a" "${BASH_IT}/"*.md &> /dev/null; then
-#     alias grep='grep --color=auto'
-#     alias fgrep='fgrep --color=auto'
-#     alias egrep='egrep --color=auto'
-#     export GREP_COLOR='1;32'
-# fi
+if grep --color=auto "a" "${ZSH}/"*.md &> /dev/null; then
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+    export GREP_COLOR='1;32'
+fi
 
 # sudo is too long! LOL
 alias _="sudo"
@@ -40,7 +40,7 @@ if [ ! -x "$(which tree 2>/dev/null)" ]; then
 fi
 
 # Aliases the ls command to display the way I like it
-# alias ls='ls -lhGpt --color=always'
+ alias ls='ls -lhGpt --color=always'
 
 # apt-get aliases
 alias apt-get="sudo apt-get"
@@ -69,6 +69,8 @@ export VISUAL=nano
 
 # Rebase local git repository.
 alias gitrebasemaster='echo -e "$(tput bold)$(tput setaf 10)Checking out master...$(tput sgr0)" && git checkout master && echo -e "$(tput bold)$(tput setaf 10)Fetching...$(tput sgr0)" && git fetch upstream && echo -e "$(tput bold)$(tput setaf 10)Rebasing...$(tput sgr0)" && git rebase upstream/master && echo -e "$(tput bold)$(tput setaf 10)Pushing...$(tput sgr0)" && git push origin master'
+
+alias gitcleanuprepo='git reflog expire --expire=now --all && git gc --prune=now'
 
 alias restart-cinnamon='nohup cinnamon --replace > /dev/null 2>&1 &'
 
