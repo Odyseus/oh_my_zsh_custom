@@ -80,6 +80,10 @@ alias youvideo='youtube-dl -o "$HOME/Videos/%(title)s.%(ext)s"'
 
 alias youaudio='youtube-dl -o "$HOME/Music/%(title)s.%(ext)s" -f "bestaudio[ext=m4a]"'
 
+alias youvid='yt-dlp -o "$HOME/Videos/%(title)s.%(ext)s"'
+
+alias youau='yt-dlp -o "$HOME/Music/%(title)s.%(ext)s" -f "bestaudio[ext=m4a]"'
+
 alias zshrc-reload='. ~/.zshrc'
 
 __gitio_func() {
