@@ -197,8 +197,13 @@ prompt_dir() {
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
+  local virtualenv_prompt="$VIRTUAL_ENV_PROMPT"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
+      if [[ -n $VIRTUAL_ENV_PROMPT ]]; then
+        prompt_segment blue black "$VIRTUAL_ENV_PROMPT"
+      else
+        prompt_segment blue black "(`basename $virtualenv_path`)"
+      fi
   fi
 }
 
@@ -223,9 +228,9 @@ build_prompt() {
   prompt_virtualenv
   prompt_context
   prompt_dir
-  prompt_git
-  prompt_bzr
-  prompt_hg
+  # prompt_git
+  # prompt_bzr
+  # prompt_hg
   prompt_end
 }
 
